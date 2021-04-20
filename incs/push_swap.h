@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 15:16:40 by adeburea          #+#    #+#             */
-/*   Updated: 2021/04/20 19:23:17 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/04/21 01:04:46 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct	s_stack
 void	lstadd_back(t_lst **alst, t_lst *new);
 void	lstadd_front(t_lst **alst, t_lst *new);
 void	lstdelone(t_lst *lst);
+void	lstfree(t_stack *stack);
 void	lstprint(t_stack stack);
 t_lst	*lstlast(t_lst *lst);
 t_lst	*lstnew(int data);
@@ -49,6 +50,8 @@ void	reverse_rotate_b(t_stack *stack, int print);
 void	reverse_rotate(t_stack *stack, int print);
 
 int		isnbr(char *s);
-int		execute(char *buf, t_stack *stack);
+int		isin(t_lst *lst);
+int		issorted(t_stack *stack);
+void	quit(t_stack *stack, int status);
 
 #endif

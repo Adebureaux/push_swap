@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lstsize.c                                          :+:      :+:    :+:   */
+/*   lstfree.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/16 15:50:15 by adeburea          #+#    #+#             */
-/*   Updated: 2021/04/20 23:25:27 by adeburea         ###   ########.fr       */
+/*   Created: 2021/04/20 19:57:10 by adeburea          #+#    #+#             */
+/*   Updated: 2021/04/21 01:06:10 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incs/push_swap.h"
 
-int		lstsize(t_lst *lst)
+void	lstfree(t_stack *stack)
 {
-	t_lst	*copy;
-	int		count;
+	t_lst	*tmp;
 
-	copy = lst;
-	count = 0;
-	while (copy)
+	while (stack->a)
 	{
-		copy = copy->next;
-		count++;
+		tmp = stack->a;
+		stack->a = stack->a->next;
+		lstdelone(tmp);
 	}
-	return (count);
+	while (stack->b)
+	{
+		tmp = stack->b;
+		stack->b = stack->b->next;
+		lstdelone(tmp);
+	}
 }

@@ -6,14 +6,14 @@
 #    By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/14 14:21:20 by adeburea          #+#    #+#              #
-#    Updated: 2021/04/20 18:32:42 by adeburea         ###   ########.fr        #
+#    Updated: 2021/04/21 01:05:30 by adeburea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 .PHONY: all clean fclean re
 
 CC		=	gcc
 NAME	=	checker
-FLAGS	=	-Wall -Wextra -g -fsanitize=address#-Werror
+FLAGS	=	-Wall -Wextra -Werror -g -fsanitize=address
 LIB		=	../../libft
 INC		=	../../incs
 OBJ		=	../../objs
@@ -25,6 +25,7 @@ OBJS	=	$(addprefix $(OBJ)/, $(SRCS:.c=.o))
 SRCS 	=	lstadd_back.c \
 			lstadd_front.c \
 			lstdelone.c \
+			lstfree.c \
 			lstprint.c \
 			lstlast.c \
 			lstnew.c \
