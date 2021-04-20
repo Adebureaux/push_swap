@@ -6,14 +6,14 @@
 #    By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/14 14:21:20 by adeburea          #+#    #+#              #
-#    Updated: 2021/04/21 01:05:30 by adeburea         ###   ########.fr        #
+#    Updated: 2021/04/21 01:19:49 by adeburea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 .PHONY: all clean fclean re
 
 CC		=	gcc
 NAME	=	checker
-FLAGS	=	-Wall -Wextra -Werror -g -fsanitize=address
+FLAGS	=	-Wall -Wextra -Werror
 LIB		=	../../libft
 INC		=	../../incs
 OBJ		=	../../objs

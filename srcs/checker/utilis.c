@@ -6,11 +6,23 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 18:29:25 by adeburea          #+#    #+#             */
-/*   Updated: 2021/04/21 01:12:36 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/04/21 01:47:30 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incs/push_swap.h"
+
+void	put_in_tab(int *tab, t_lst *lst)
+{
+	int		i;
+
+	i = 0;
+	while (lst)
+	{
+		tab[i++] = lst->nbr;
+		lst = lst->next;
+	}
+}
 
 int		isin(t_lst *lst)
 {
@@ -21,12 +33,7 @@ int		isin(t_lst *lst)
 
 	size = lstsize(lst);
 	tab = (int*)malloc(sizeof(int) * size);
-	i = 0;
-	while (lst)
-	{
-		tab[i++] = lst->nbr;
-		lst = lst->next;
-	}
+	put_in_tab(tab, lst);
 	i = -1;
 	while (++i < size)
 	{
@@ -34,29 +41,33 @@ int		isin(t_lst *lst)
 		while (j < size)
 		{
 			if (tab[i] == tab[j++])
+			{
+				free(tab);
 				return (0);
+			}
 		}
 	}
 	free(tab);
 	return (1);
 }
 
-int		issorted(t_stack *stack)
+void	issorted(t_stack *stack)
 {
+	t_lst	*cur;
 	t_lst	*cmp;
 
 	if (stack->b)
 		quit(stack, -1);
+	cur = stack->a;
 	cmp = stack->a->next;
-	while (stack->a->next)
+	while (cur->next)
 	{
-		if (stack->a->nbr > cmp->nbr)
+		if (cur->nbr > cmp->nbr)
 			quit(stack, -1);
-		stack->a = stack->a->next;
+		cur = cur->next;
 		cmp = cmp->next;
 	}
 	quit(stack, EXIT_SUCCESS);
-	return (0);
 }
 
 int		isnbr(char *s)

@@ -6,13 +6,13 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 15:16:40 by adeburea          #+#    #+#             */
-/*   Updated: 2021/04/21 01:04:46 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/04/21 01:43:33 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-# include "../../libft/libft.h"
+# include "../libft/libft.h"
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -51,7 +51,7 @@ void	reverse_rotate(t_stack *stack, int print);
 
 int		isnbr(char *s);
 int		isin(t_lst *lst);
-int		issorted(t_stack *stack);
+void	issorted(t_stack *stack);
 void	quit(t_stack *stack, int status);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 15:36:48 by adeburea          #+#    #+#             */
-/*   Updated: 2021/04/21 01:14:16 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/04/21 01:45:59 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,13 +68,15 @@ int		read_stdin(t_stack *stack)
 
 	i = 0;
 	rd = 1;
-	while (rd == 1 && i < 100)
+	ft_bzero(buf, 100);
+	while (rd == 1)
 	{
 		rd = read(1, &buf[i], 1);
 		if (buf[i] == '\n')
 		{
 			buf[i] = '\0';
 			execute(buf, stack);
+			ft_bzero(buf, 100);
 			i = -1;
 		}
 		i++;
