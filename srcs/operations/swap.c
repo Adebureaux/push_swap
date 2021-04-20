@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 15:23:53 by adeburea          #+#    #+#             */
-/*   Updated: 2021/04/20 17:16:41 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/04/20 19:14:30 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,10 @@ void	swap_b(t_stack *stack, int print)
 	}
 }
 
-void	swap(t_stack *stack)
+void	swap(t_stack *stack, int print)
 {
 	swap_a(stack, 0);
 	swap_b(stack, 0);
-	if (stack->a && stack->b)
+	if (print && stack->a && stack->b)
 		ft_putstr_fd("ss\n", 1);
 }

@@ -6,7 +6,7 @@
 #    By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/14 14:21:20 by adeburea          #+#    #+#              #
-#    Updated: 2021/04/20 17:32:20 by adeburea         ###   ########.fr        #
+#    Updated: 2021/04/20 18:32:42 by adeburea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 .PHONY: all clean fclean re
@@ -33,7 +33,8 @@ SRCS 	=	lstadd_back.c \
 			push.c \
 			rotate.c \
 			reverse_rotate.c \
-			checker.c
+			checker.c \
+			utilis.c
 
 $(NAME): $(LIBFT) $(OBJ) $(OBJS)
 	$(CC) $(FLAGS) -I$(INC) -o $(NAME) $(OBJS) $(LIBFT)

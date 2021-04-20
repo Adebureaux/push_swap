@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 13:36:40 by adeburea          #+#    #+#             */
-/*   Updated: 2021/04/20 17:16:31 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/04/20 19:40:58 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,10 @@ void	rotate_b(t_stack *stack, int print)
 	}
 }
 
-void	rotate(t_stack *stack)
+void	rotate(t_stack *stack, int print)
 {
 	rotate_a(stack, 0);
 	rotate_b(stack, 0);
-	if (stack->a && stack->b)
+	if (print && stack->a && stack->b)
 		ft_putstr_fd("rr\n", 1);
 }

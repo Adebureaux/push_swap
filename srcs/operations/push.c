@@ -6,13 +6,13 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 13:33:09 by adeburea          #+#    #+#             */
-/*   Updated: 2021/04/20 13:34:50 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/04/20 19:15:00 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incs/push_swap.h"
 
-void	push_a(t_stack *stack)
+void	push_a(t_stack *stack, int print)
 {
 	t_lst	*first;
 	int		tmp;
@@ -25,11 +25,12 @@ void	push_a(t_stack *stack)
 		lstdelone(first);
 		first = lstnew(tmp);
 		lstadd_front(&stack->a, first);
-		ft_putstr_fd("pa\n", 1);
+		if (print)
+			ft_putstr_fd("pa\n", 1);
 	}
 }
 
-void	push_b(t_stack *stack)
+void	push_b(t_stack *stack, int print)
 {
 	t_lst	*first;
 	int		tmp;
@@ -42,6 +43,7 @@ void	push_b(t_stack *stack)
 		lstdelone(first);
 		first = lstnew(tmp);
 		lstadd_front(&stack->b, first);
-		ft_putstr_fd("pb\n", 1);
+		if (print)
+			ft_putstr_fd("pb\n", 1);
 	}
 }

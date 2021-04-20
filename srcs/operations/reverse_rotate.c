@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 17:17:51 by adeburea          #+#    #+#             */
-/*   Updated: 2021/04/20 18:18:24 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/04/20 19:14:16 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,10 @@ void	reverse_rotate_b(t_stack *stack, int print)
 	}
 }
 
-void	reverse_rotate(t_stack *stack)
+void	reverse_rotate(t_stack *stack, int print)
 {
 	reverse_rotate_a(stack, 0);
 	reverse_rotate_b(stack, 0);
-	if (stack->a && stack->b)
+	if (print && stack->a && stack->b)
 		ft_putstr_fd("rrr\n", 1);
 }

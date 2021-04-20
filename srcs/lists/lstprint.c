@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 15:53:02 by adeburea          #+#    #+#             */
-/*   Updated: 2021/04/20 18:01:11 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/04/20 19:38:20 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ void	lstprint(t_stack stack)
 {
 	int	len;
 
-	len = 0;
 	ft_putstr_fd("     Stack A           Stack B     \n\n", 1);
 	while (stack.a || stack.b)
 	{
+		len = 1;
 		if (stack.a)
 		{
 			len = ft_nbrlen_base(stack.a->nbr, 10);
@@ -28,8 +28,6 @@ void	lstprint(t_stack stack)
 			ft_putnbr_fd(stack.a->nbr, 1);
 			stack.a = stack.a->next;
 		}
-		else
-			ft_putstr_fd("                  ", 1);
 		while (len++ < 18)
 			ft_putchar_fd(' ', 1);
 		ft_putstr_fd("|       ", 1);

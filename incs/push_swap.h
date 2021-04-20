@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 15:16:40 by adeburea          #+#    #+#             */
-/*   Updated: 2021/04/20 18:18:42 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/04/20 19:23:17 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,17 @@ t_lst	*lstnew(int data);
 int		lstsize(t_lst *lst);
 void	swap_a(t_stack *stack, int print);
 void	swap_b(t_stack *stack, int print);
-void	swap(t_stack *stack);
-void	push_a(t_stack *stack);
-void	push_b(t_stack *stack);
+void	swap(t_stack *stack, int print);
+void	push_a(t_stack *stack, int print);
+void	push_b(t_stack *stack, int print);
 void	rotate_a(t_stack *stack, int print);
 void	rotate_b(t_stack *stack, int print);
-void	rotate(t_stack *stack);
+void	rotate(t_stack *stack, int print);
 void	reverse_rotate_a(t_stack *stack, int print);
 void	reverse_rotate_b(t_stack *stack, int print);
-void	reverse_rotate(t_stack *stack);
+void	reverse_rotate(t_stack *stack, int print);
+
+int		isnbr(char *s);
+int		execute(char *buf, t_stack *stack);
 
 #endif
