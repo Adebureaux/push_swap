@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 15:16:40 by adeburea          #+#    #+#             */
-/*   Updated: 2021/04/21 01:43:33 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/04/21 03:37:51 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,9 @@ void	reverse_rotate(t_stack *stack, int print);
 int		isnbr(char *s);
 int		isin(t_lst *lst);
 void	issorted(t_stack *stack);
+void	put_in_tab(int *tab, t_lst *lst);
 void	quit(t_stack *stack, int status);
+
+void	solve_three(t_stack *stack);
 
 #endif

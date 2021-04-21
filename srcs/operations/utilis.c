@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 18:29:25 by adeburea          #+#    #+#             */
-/*   Updated: 2021/04/21 01:47:30 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/04/21 02:48:17 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,17 +73,26 @@ void	issorted(t_stack *stack)
 int		isnbr(char *s)
 {
 	int		i;
+	int		flag;
 
 	i = 0;
+	flag = 0;
 	if (s[i] == '-')
 	{
 		if (!s[1])
 			return (0);
 		i++;
+		flag = 1;
 	}
 	while (s[i])
 	{
 		if (!ft_isdigit(s[i]))
+			return (0);
+		else if (!flag && i >= 9 && (s[i - 1] > '4' || s[i] > '7'))
+			return (0);
+		else if (flag && i >= 10 && (s[i - 1] > '4' || s[i] > '8'))
+			return (0);
+		else if ((!flag && i >= 10) || (flag && i >= 11))
 			return (0);
 		i++;
 	}
