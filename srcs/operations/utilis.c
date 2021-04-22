@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 18:29:25 by adeburea          #+#    #+#             */
-/*   Updated: 2021/04/21 02:48:17 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/04/22 14:04:50 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,23 +51,25 @@ int		isin(t_lst *lst)
 	return (1);
 }
 
-void	issorted(t_stack *stack)
+void	issorted(t_stack *stack, int exit)
 {
 	t_lst	*cur;
 	t_lst	*cmp;
 
-	if (stack->b)
+	lstprint(*stack);
+	if (stack->b && exit)
 		quit(stack, -1);
 	cur = stack->a;
 	cmp = stack->a->next;
 	while (cur->next)
 	{
-		if (cur->nbr > cmp->nbr)
+		if (cur->nbr > cmp->nbr && exit)
 			quit(stack, -1);
 		cur = cur->next;
 		cmp = cmp->next;
 	}
-	quit(stack, EXIT_SUCCESS);
+	if (exit)
+		quit(stack, EXIT_SUCCESS);
 }
 
 int		isnbr(char *s)

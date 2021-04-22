@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 15:36:48 by adeburea          #+#    #+#             */
-/*   Updated: 2021/04/22 09:50:35 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/04/22 13:30:41 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ void	execute(char *buf, t_stack *stack)
 		reverse_rotate(stack, 0);
 	else
 		quit(stack, EXIT_FAILURE);
-	lstprint(*stack);
 }
 
 int		read_stdin(t_stack *stack)
@@ -71,7 +70,7 @@ int		read_stdin(t_stack *stack)
 	ft_bzero(buf, 100);
 	while (rd == 1)
 	{
-		rd = read(1, &buf[i], 1);
+		rd = read(0, &buf[i], 1);
 		if (buf[i] == '\n')
 		{
 			buf[i] = '\0';
@@ -98,5 +97,5 @@ int		main(int ac, char **av)
 	if (!parse_arg(av, &stack))
 		quit(&stack, EXIT_FAILURE);
 	read_stdin(&stack);
-	issorted(&stack);
+	issorted(&stack, 1);
 }
