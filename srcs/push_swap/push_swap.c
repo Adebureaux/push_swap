@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 02:09:13 by adeburea          #+#    #+#             */
-/*   Updated: 2021/04/21 03:54:39 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/04/22 09:50:15 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ int		parse_arg(char **av, t_stack *stack)
 
 void	solver(t_stack *stack)
 {
-
 	solve_three(stack);
 }
 
