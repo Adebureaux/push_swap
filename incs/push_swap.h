@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 15:16:40 by adeburea          #+#    #+#             */
-/*   Updated: 2021/04/24 18:38:38 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/04/24 23:51:13 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	issorted(t_stack *stack, int exit);
 
 void	quit(t_stack *stack, int status);
 void	execute(char *buf, t_stack *stack, int print);
-int		parse_arg(char **av, t_stack *stack);
+void	parse_arg(char **av, t_stack *stack);
 
 void	solver(t_stack *stack);
 
