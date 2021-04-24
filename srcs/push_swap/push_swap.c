@@ -6,58 +6,11 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 02:09:13 by adeburea          #+#    #+#             */
-/*   Updated: 2021/04/23 16:41:13 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/04/24 18:31:15 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incs/push_swap.h"
-
-int		parse_arg(char **av, t_stack *stack)
-{
-	int		i;
-	t_lst	*tmp;
-
-	i = 2;
-	while (av[i])
-	{
-		if (!isnbr(av[i]))
-			quit(stack, EXIT_FAILURE);
-		tmp = lstnew(ft_atoi(av[i]));
-		lstadd_back(&stack->a, tmp);
-		i++;
-	}
-	if (!isin(stack->a))
-		return (0);
-	return (1);
-}
-
-void	execute(char *buf, t_stack *stack)
-{
-	if (!ft_strcmp(buf, "sa"))
-		swap_a(stack, 1);
-	else if (!ft_strcmp(buf, "sb"))
-		swap_b(stack, 1);
-	else if (!ft_strcmp(buf, "ss"))
-		swap(stack, 1);
-	else if (!ft_strcmp(buf, "pa"))
-		push_a(stack, 1);
-	else if (!ft_strcmp(buf, "pb"))
-		push_b(stack, 1);
-	else if (!ft_strcmp(buf, "ra"))
-		rotate_a(stack, 1);
-	else if (!ft_strcmp(buf, "rb"))
-		rotate_b(stack, 1);
-	else if (!ft_strcmp(buf, "rr"))
-		rotate(stack, 1);
-	else if (!ft_strcmp(buf, "rra"))
-		reverse_rotate_a(stack, 1);
-	else if (!ft_strcmp(buf, "rrb"))
-		reverse_rotate_b(stack, 1);
-	else if (!ft_strcmp(buf, "rrr"))
-		reverse_rotate(stack, 1);
-	else
-		quit(stack, EXIT_FAILURE);
-}
 
 int		main(int ac, char **av)
 {

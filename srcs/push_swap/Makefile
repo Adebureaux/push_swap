@@ -6,7 +6,7 @@
 #    By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/21 02:09:23 by adeburea          #+#    #+#              #
-#    Updated: 2021/04/23 13:23:44 by adeburea         ###   ########.fr        #
+#    Updated: 2021/04/24 18:34:02 by adeburea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 .PHONY: all clean fclean re
@@ -19,6 +19,7 @@ INC		=	../../incs
 OBJ		=	../../objs
 LST		=	../lists
 OP		=	../operations
+UT		=	../utilis
 LIBFT	=	$(addprefix $(LIB)/, libft.a)
 INCS	=	$(addprefix $(INC)/, push_swap.h)
 OBJS	=	$(addprefix $(OBJ)/, $(SRCS:.c=.o))
@@ -34,7 +35,8 @@ SRCS 	=	lstadd_back.c \
 			push.c \
 			rotate.c \
 			reverse_rotate.c \
-			utilis.c \
+			utilis_arg.c \
+			utilis_is.c \
 			solver.c \
 			push_swap.c
 
@@ -51,6 +53,9 @@ $(OBJ)/%.o: $(LST)/%.c
 	$(CC) $(FLAGS) -I$(INC) -c $< -o $@
 
 $(OBJ)/%.o: $(OP)/%.c
+	$(CC) $(FLAGS) -I$(INC) -c $< -o $@
+
+$(OBJ)/%.o: $(UT)/%.c
 	$(CC) $(FLAGS) -I$(INC) -c $< -o $@
 
 $(OBJ)/%.o: ./%.c

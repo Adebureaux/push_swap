@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 15:16:40 by adeburea          #+#    #+#             */
-/*   Updated: 2021/04/23 16:42:19 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/04/24 18:38:38 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,11 @@ void	reverse_rotate(t_stack *stack, int print);
 int		isnbr(char *s);
 int		isin(t_lst *lst);
 void	issorted(t_stack *stack, int exit);
-void	put_in_tab(int *tab, t_lst *lst);
+
 void	quit(t_stack *stack, int status);
+void	execute(char *buf, t_stack *stack, int print);
+int		parse_arg(char **av, t_stack *stack);
 
 void	solver(t_stack *stack);
-void	execute(char *buf, t_stack *stack);
 
 #endif

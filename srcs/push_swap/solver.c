@@ -6,11 +6,16 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 03:16:09 by adeburea          #+#    #+#             */
-/*   Updated: 2021/04/24 18:15:21 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/04/24 18:35:54 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incs/push_swap.h"
+
+// void	solve_two(t_stack *stack)
+// {
+// 	if (stack->a->nbr >)
+// }
 
 void	solve_three(t_stack *stack)
 {
@@ -22,15 +27,15 @@ void	solve_three(t_stack *stack)
 	m = stack->a->next;
 	l = stack->a->next->next;
 	if (f->nbr > m->nbr && m->nbr < l->nbr && f->nbr < l->nbr)
-		execute("sa", stack);
+		execute("sa", stack, 1);
 	else if (f->nbr > m->nbr && m->nbr > l->nbr && f->nbr > l->nbr)
-		execute("sa", stack);
+		execute("sa", stack, 1);
 	else if (f->nbr < m->nbr && m->nbr > l->nbr && f->nbr < l->nbr)
-		execute("sa", stack);
+		execute("sa", stack, 1);
 	if (f->nbr > m->nbr && m->nbr < l->nbr && f->nbr > l->nbr)
-		execute("ra", stack);
+		execute("ra", stack, 1);
 	else if (f->nbr < m->nbr && m->nbr > l->nbr && f->nbr > l->nbr)
-		execute("rra", stack);
+		execute("rra", stack, 1);
 }
 
 void	solver(t_stack *stack)

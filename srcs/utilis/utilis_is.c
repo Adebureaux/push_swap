@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utilis.c                                           :+:      :+:    :+:   */
+/*   utilis_is.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 18:29:25 by adeburea          #+#    #+#             */
-/*   Updated: 2021/04/24 18:03:05 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/04/24 18:38:25 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,26 +51,6 @@ int		isin(t_lst *lst)
 	return (1);
 }
 
-void	issorted(t_stack *stack, int exit)
-{
-	t_lst	*cur;
-	t_lst	*cmp;
-
-	if (stack->b && exit)
-		quit(stack, -1);
-	cur = stack->a;
-	cmp = stack->a->next;
-	while (cur->next)
-	{
-		if (cur->nbr > cmp->nbr && exit)
-			quit(stack, -1);
-		cur = cur->next;
-		cmp = cmp->next;
-	}
-	if (exit)
-		quit(stack, EXIT_SUCCESS);
-}
-
 int		isnbr(char *s)
 {
 	int		i;
@@ -100,15 +80,22 @@ int		isnbr(char *s)
 	return (1);
 }
 
-void	quit(t_stack *stack, int status)
+void	issorted(t_stack *stack, int exit)
 {
-	if (status == EXIT_FAILURE)
-		ft_putstr_fd("Error\n", 1);
-	else if (status == EXIT_SUCCESS)
-		ft_putstr_fd("OK\n", 1);
-	else if (status == -1)
-		ft_putstr_fd("KO\n", 1);
-	if (stack)
-		lstfree(stack);
-	exit(status);
+	t_lst	*cur;
+	t_lst	*cmp;
+
+	if (stack->b && exit)
+		quit(stack, -1);
+	cur = stack->a;
+	cmp = stack->a->next;
+	while (cur->next)
+	{
+		if (cur->nbr > cmp->nbr && exit)
+			quit(stack, -1);
+		cur = cur->next;
+		cmp = cmp->next;
+	}
+	if (exit)
+		quit(stack, EXIT_SUCCESS);
 }
