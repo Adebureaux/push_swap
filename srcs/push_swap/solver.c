@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   solve_three.c                                      :+:      :+:    :+:   */
+/*   solver.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 03:16:09 by adeburea          #+#    #+#             */
-/*   Updated: 2021/04/22 15:04:49 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/04/24 17:59:57 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,26 @@
 
 void	solve_three(t_stack *stack)
 {
-	int		*tab;
-	int		size;
+	t_lst	*f;
+	t_lst	*m;
+	t_lst	*l;
 
-	size = lstsize(stack->a);
-	tab = (int*)malloc(sizeof(int) * size);
-	put_in_tab(tab, stack->a);
-	if (tab[0] > tab[1] && tab[1] < tab[2] && tab[0] < tab[2])
-		ft_putstr_fd("sa\n", 1);
-	else if (tab[0] > tab[1] && tab[1] > tab[2] && tab[0] > tab[2])
-		ft_putstr_fd("sa\n", 1);
-	else if (tab[0] < tab[1] && tab[1] > tab[2] && tab[0] < tab[2])
-		ft_putstr_fd("sa\n", 1);
-	if (tab[0] > tab[1] && tab[1] < tab[2] && tab[0] > tab[2])
-		ft_putstr_fd("ra\n", 1);
-	else if (tab[0] < tab[1] && tab[1] > tab[2] && tab[0] > tab[2])
-		ft_putstr_fd("rra\n", 1);
-	free(tab);
+	f = stack->a;
+	m = stack->a->next;
+	l = stack->a->next->next;
+	if (f->nbr > m->nbr && m->nbr < l->nbr && f->nbr < l->nbr)
+		execute("sa", stack);
+	else if (f->nbr > m->nbr && m->nbr > l->nbr && f->nbr > l->nbr)
+		execute("sa", stack);
+	else if (f->nbr < m->nbr && m->nbr > l->nbr && f->nbr < l->nbr)
+		execute("sa", stack);
+	if (f->nbr > m->nbr && m->nbr < l->nbr && f->nbr > l->nbr)
+		execute("ra", stack);
+	else if (f->nbr < m->nbr && m->nbr > l->nbr && f->nbr > l->nbr)
+		execute("rra", stack);
+}
+
+void	solver(t_stack *stack)
+{
+	solve_three(stack);
 }

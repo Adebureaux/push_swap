@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 18:29:25 by adeburea          #+#    #+#             */
-/*   Updated: 2021/04/22 14:04:50 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/04/24 18:03:05 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ void	issorted(t_stack *stack, int exit)
 	t_lst	*cur;
 	t_lst	*cmp;
 
-	lstprint(*stack);
 	if (stack->b && exit)
 		quit(stack, -1);
 	cur = stack->a;
@@ -104,11 +103,11 @@ int		isnbr(char *s)
 void	quit(t_stack *stack, int status)
 {
 	if (status == EXIT_FAILURE)
-		ft_putstr_fd("Error\n", 2);
+		ft_putstr_fd("Error\n", 1);
 	else if (status == EXIT_SUCCESS)
-		ft_putstr_fd("OK\n", 2);
+		ft_putstr_fd("OK\n", 1);
 	else if (status == -1)
-		ft_putstr_fd("KO\n", 2);
+		ft_putstr_fd("KO\n", 1);
 	if (stack)
 		lstfree(stack);
 	exit(status);
