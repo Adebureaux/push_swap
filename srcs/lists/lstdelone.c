@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 15:55:42 by adeburea          #+#    #+#             */
-/*   Updated: 2021/04/20 18:00:10 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/04/26 00:24:59 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 void	lstdelone(t_lst *lst)
 {
-	if (!lst)
-		return ;
-	free(lst);
+	if (lst)
+	{
+		lst->next = NULL;
+		free(lst);
+	}
 }

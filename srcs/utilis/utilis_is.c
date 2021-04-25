@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 18:29:25 by adeburea          #+#    #+#             */
-/*   Updated: 2021/04/24 23:55:50 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/04/26 01:50:44 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,22 +80,48 @@ int		isnbr(char *s)
 	return (1);
 }
 
-void	issorted(t_stack *stack, int exit)
+int		is_stack_sorted(t_stack *stack, int exit)
 {
 	t_lst	*cur;
 	t_lst	*cmp;
 
-	if (stack->b && exit)
-		quit(stack, -1);
+	if (stack->b)
+	{
+		if (exit)
+			quit(stack, -1);
+		return (0);
+	}
 	cur = stack->a;
 	cmp = stack->a->next;
 	while (cur->next)
 	{
-		if (cur->nbr > cmp->nbr && exit)
-			quit(stack, -1);
+		if (cur->nbr > cmp->nbr)
+		{
+			if (exit)
+				quit(stack, -1);
+			return (0);
+		}
 		cur = cur->next;
 		cmp = cmp->next;
 	}
 	if (exit)
 		quit(stack, EXIT_SUCCESS);
+	return (1);
+}
+
+int		is_lst_sorted(t_lst *lst)
+{
+	t_lst	*cur;
+	t_lst	*cmp;
+
+	cur = lst;
+	cmp = lst->next;
+	while (cur->next)
+	{
+		if (cur->nbr > cmp->nbr)
+			return (0);
+		cur = cur->next;
+		cmp = cmp->next;
+	}
+	return (1);
 }
