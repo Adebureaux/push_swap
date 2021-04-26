@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 03:16:09 by adeburea          #+#    #+#             */
-/*   Updated: 2021/04/26 01:52:33 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/04/26 15:50:52 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,8 @@ void	solver(t_stack *stack)
 		while (size-- > 3)
 			execute("pb", stack, 1);
 		solve_three(stack);
+		if (lstsize(stack->b) == 2)
+			solve_two(stack->b, stack);
 		while (!is_stack_sorted(stack, 0))
 			solve_more(stack);
 	}
