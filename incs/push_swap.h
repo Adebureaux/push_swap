@@ -6,16 +6,13 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 15:16:40 by adeburea          #+#    #+#             */
-/*   Updated: 2021/04/26 01:51:07 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/05/17 17:14:42 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # define EXIT 99
-# define FIRST stack->a->nbr
-# define MID stack->a->next->nbr
-# define LAST stack->a->next->next->nbr
 # include "../libft/libft.h"
 # include <stdio.h>
 # include <stdlib.h>

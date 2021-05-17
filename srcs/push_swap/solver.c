@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 03:16:09 by adeburea          #+#    #+#             */
-/*   Updated: 2021/04/26 15:50:52 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/05/17 17:17:53 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,25 @@ void	solve_two(t_lst *lst, t_stack *stack)
 
 void	solve_three(t_stack *stack)
 {
-	if (FIRST > MID && MID < LAST && FIRST < LAST)
+	if (stack->a->nbr > stack->a->next->nbr
+		&& stack->a->next->nbr < stack->a->next->next->nbr
+		&& stack->a->nbr < stack->a->next->next->nbr)
 		execute("sa", stack, 1);
-	else if (FIRST > MID && MID > LAST && FIRST > LAST)
+	else if (stack->a->nbr > stack->a->next->nbr
+		&& stack->a->next->nbr > stack->a->next->next->nbr
+		&& stack->a->nbr > stack->a->next->next->nbr)
 		execute("sa", stack, 1);
-	else if (FIRST < MID && MID > LAST && FIRST < LAST)
+	else if (stack->a->nbr < stack->a->next->nbr
+		&& stack->a->next->nbr > stack->a->next->next->nbr
+		&& stack->a->nbr < stack->a->next->next->nbr)
 		execute("sa", stack, 1);
-	if (FIRST > MID && MID < LAST && FIRST > LAST)
+	if (stack->a->nbr > stack->a->next->nbr
+		&& stack->a->next->nbr < stack->a->next->next->nbr
+		&& stack->a->nbr > stack->a->next->next->nbr)
 		execute("ra", stack, 1);
-	else if (FIRST < MID && MID > LAST && FIRST > LAST)
+	else if (stack->a->nbr < stack->a->next->nbr
+		&& stack->a->next->nbr > stack->a->next->next->nbr
+		&& stack->a->nbr > stack->a->next->next->nbr)
 		execute("rra", stack, 1);
 }
 
@@ -65,7 +75,7 @@ void	solve_more(t_stack *stack)
 			execute("ra", stack, 1);
 		return ;
 	}
-	while (FIRST < stack->b->nbr)
+	while (stack->a->nbr < stack->b->nbr)
 		execute("ra", stack, 1);
 	execute("pa", stack, 1);
 	while (!is_lst_sorted(stack->a))
