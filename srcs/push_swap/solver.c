@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 03:16:09 by adeburea          #+#    #+#             */
-/*   Updated: 2021/05/31 15:21:42 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/05/31 16:10:46 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,10 +82,10 @@ void	solve_more(t_stack *stack)
 		execute("ra", stack, 1);
 }
 
-// void	quickswap(t_stack *stack, int a, int b)
-// {
-// 	while ()
-// }
+void	quickswap(t_stack *stack, int a, int b)
+{
+	while ()
+}
 
 void	quicksort(int *number, int first, int last)
 {
