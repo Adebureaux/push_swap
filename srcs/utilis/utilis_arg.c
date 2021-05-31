@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 18:30:41 by adeburea          #+#    #+#             */
-/*   Updated: 2021/04/24 23:55:26 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/05/30 16:51:50 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ void	parse_arg(char **av, t_stack *stack)
 	i = 2;
 	while (av[i])
 	{
-		if (!isnbr(av[i]))
+		if (!is_nbr(av[i]))
 			quit(stack, EXIT_FAILURE);
 		tmp = lstnew(ft_atoi(av[i]));
 		lstadd_back(&stack->a, tmp);
 		i++;
 	}
-	if (!isin(stack->a))
+	if (!is_in(stack->a))
 		quit(stack, EXIT_FAILURE);
 }
 

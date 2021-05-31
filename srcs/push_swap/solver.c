@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 03:16:09 by adeburea          #+#    #+#             */
-/*   Updated: 2021/05/17 17:17:53 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/05/31 15:21:42 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,25 +82,77 @@ void	solve_more(t_stack *stack)
 		execute("ra", stack, 1);
 }
 
+// void	quickswap(t_stack *stack, int a, int b)
+// {
+// 	while ()
+// }
+
+void	quicksort(int *number, int first, int last)
+{
+	int i, j, pivot, temp;
+
+	if (first < last)
+	{
+		pivot = first;
+		i = first;
+		j = last;
+		while (i < j)
+		{
+			while (number[i] <= number[pivot] && i < last)
+				i++;
+			while (number[j] > number[pivot])
+				j--;
+			printf("pivot = %d && i = %d && j = %d\n", pivot, i, j);
+			if (i < j)
+			{
+				temp = number[i];
+				number[i] = number[j];
+				number[j] = temp;
+			}
+		}
+		if (pivot != j)
+		{
+			temp = number[pivot];
+			number[pivot] = number[j];
+			number[j] = temp;
+		}
+		quicksort(number, first, j - 1);
+		quicksort(number, j + 1, last);
+	}
+}
+
 void	solver(t_stack *stack)
 {
-	int		size;
+	// // FIRST SOLUTION
+	// int		size;
+	//
+	// size = lstsize(stack->a);
+	// if (size < 2)
+	// 	quit(stack, EXIT);
+	// if (size == 2)
+	// 	solve_two(stack->a, stack);
+	// else if (size == 3)
+	// 	solve_three(stack);
+	// else
+	// {
+	// 	while (size-- > 3)
+	// 		execute("pb", stack, 1);
+	// 	solve_three(stack);
+	// 	if (lstsize(stack->b) == 2)
+	// 		solve_two(stack->b, stack);
+	// 	while (!is_stack_sorted(stack, 0))
+	// 		solve_more(stack);
+	// }
+	//lstprint(*stack);
 
-	size = lstsize(stack->a);
-	if (size < 2)
-		quit(stack, EXIT);
-	if (size == 2)
-		solve_two(stack->a, stack);
-	else if (size == 3)
-		solve_three(stack);
-	else
-	{
-		while (size-- > 3)
-			execute("pb", stack, 1);
-		solve_three(stack);
-		if (lstsize(stack->b) == 2)
-			solve_two(stack->b, stack);
-		while (!is_stack_sorted(stack, 0))
-			solve_more(stack);
-	}
+	// TEMPORARY SOLUTION (QUICKSORT WITH INT ARRAY)
+	int size = lstsize(stack->a);
+	int *tab = put_in_tab(stack->a, size);
+	quicksort(tab, 0, size - 1);
+	int i = 0;
+	while (i < size)
+		printf("%d\n", tab[i++]);
+
+	// // LAST CHANCE (QUICKSORT WITH LINKED LIST)
+
 }
