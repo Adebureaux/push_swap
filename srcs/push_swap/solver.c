@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 03:16:09 by adeburea          #+#    #+#             */
-/*   Updated: 2021/05/31 16:10:46 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/06/01 15:54:04 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,31 @@ void	solve_more(t_stack *stack)
 
 void	quickswap(t_stack *stack, int a, int b)
 {
-	while ()
+	int		i;
+	int		first;
+	int		size;
+
+	i = -1;
+	size = lstsize(stack->a);
+	if (a == 0)
+		
+	first = stack->a->nbr;
+	while (++i < a)
+		execute("ra", stack, 1);
+	execute("pb", stack, 1);
+	while (++i < b)
+		execute("ra", stack, 1);
+	execute("pb", stack, 1);
+	execute("sb", stack, 1);
+	while (stack->a->nbr != first)
+	{
+		if (i - 1 == a)
+			execute("pa", stack, 1);
+		if (i == b)
+			execute("pa", stack, 1);
+		execute("rra", stack, 1);
+		i--;
+	}
 }
 
 void	quicksort(int *number, int first, int last)
@@ -102,9 +126,9 @@ void	quicksort(int *number, int first, int last)
 				i++;
 			while (number[j] > number[pivot])
 				j--;
-			printf("pivot = %d && i = %d && j = %d\n", pivot, i, j);
 			if (i < j)
 			{
+				printf("in loop : i = %d && j = %d\n", i, j);
 				temp = number[i];
 				number[i] = number[j];
 				number[j] = temp;
@@ -112,6 +136,7 @@ void	quicksort(int *number, int first, int last)
 		}
 		if (pivot != j)
 		{
+			printf("outloop : pivot = %d && j = %d\n", pivot, j);
 			temp = number[pivot];
 			number[pivot] = number[j];
 			number[j] = temp;
@@ -146,13 +171,15 @@ void	solver(t_stack *stack)
 	//lstprint(*stack);
 
 	// TEMPORARY SOLUTION (QUICKSORT WITH INT ARRAY)
-	int size = lstsize(stack->a);
-	int *tab = put_in_tab(stack->a, size);
-	quicksort(tab, 0, size - 1);
-	int i = 0;
-	while (i < size)
-		printf("%d\n", tab[i++]);
+	// int size = lstsize(stack->a);
+	// int *tab = put_in_tab(stack->a, size);
+	// quicksort(tab, 0, size - 1);
+	// int i = 0;
+	// while (i < size)
+	// 	printf("%d\n", tab[i++]);
 
 	// // LAST CHANCE (QUICKSORT WITH LINKED LIST)
-
+	lstprint(*stack);
+	quickswap(stack, 1, 5);
+	lstprint(*stack);
 }
