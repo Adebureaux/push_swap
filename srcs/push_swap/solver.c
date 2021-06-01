@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 03:16:09 by adeburea          #+#    #+#             */
-/*   Updated: 2021/06/01 15:54:04 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/06/01 16:04:56 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,6 @@ void	quickswap(t_stack *stack, int a, int b)
 
 	i = -1;
 	size = lstsize(stack->a);
-	if (a == 0)
-		
 	first = stack->a->nbr;
 	while (++i < a)
 		execute("ra", stack, 1);
