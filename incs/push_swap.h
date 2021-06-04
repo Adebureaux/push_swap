@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 15:16:40 by adeburea          #+#    #+#             */
-/*   Updated: 2021/05/30 17:16:05 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/06/04 16:53:57 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,9 @@ typedef struct	s_stack
 {
 	t_lst			*a;
 	t_lst			*b;
+	int				median;
+	int				first;
+	int				last;
 }				t_stack;
 
 void	lstadd_back(t_lst **alst, t_lst *new);
@@ -50,7 +53,6 @@ void	reverse_rotate_a(t_stack *stack, int print);
 void	reverse_rotate_b(t_stack *stack, int print);
 void	reverse_rotate(t_stack *stack, int print);
 
-int		*put_in_tab(t_lst *lst, int size);
 int		is_in(t_lst *lst);
 int		is_nbr(char *s);
 int		is_stack_sorted(t_stack *stack, int exit);
@@ -59,6 +61,10 @@ int		is_lst_sorted(t_lst *lst);
 void	quit(t_stack *stack, int status);
 void	execute(char *buf, t_stack *stack, int print);
 void	parse_arg(char **av, t_stack *stack);
+
+int		*put_in_tab(t_lst *lst, int size);
+int		find_pos(t_lst *lst, int cmp);
+void	find_median(t_stack *stack, int size);
 
 void	solver(t_stack *stack);
 
