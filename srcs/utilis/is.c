@@ -6,35 +6,30 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 18:29:25 by adeburea          #+#    #+#             */
-/*   Updated: 2021/06/04 15:43:40 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/06/13 19:49:39 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incs/push_swap.h"
 
-int		is_in(t_lst *lst)
+int		is_in(t_stack *stack)
 {
-	int		*tab;
 	int		size;
 	int		i;
 	int		j;
 
-	size = lstsize(lst);
-	tab = put_in_tab(lst, size);
 	i = -1;
+	size = lstsize(stack->a);
+	put_in_tab(stack, stack->a, size);
 	while (++i < size)
 	{
 		j = i + 1;
 		while (j < size)
 		{
-			if (tab[i] == tab[j++])
-			{
-				free(tab);
+			if (stack->sorted[i] == stack->sorted[j++])
 				return (0);
-			}
 		}
 	}
-	free(tab);
 	return (1);
 }
 
@@ -106,6 +101,23 @@ int		is_lst_sorted(t_lst *lst)
 	while (cur->next)
 	{
 		if (cur->nbr > cmp->nbr)
+			return (0);
+		cur = cur->next;
+		cmp = cmp->next;
+	}
+	return (1);
+}
+
+int		is_lst_reverse_sorted(t_lst *lst)
+{
+	t_lst	*cur;
+	t_lst	*cmp;
+
+	cur = lst;
+	cmp = lst->next;
+	while (cur->next)
+	{
+		if (cur->nbr < cmp->nbr)
 			return (0);
 		cur = cur->next;
 		cmp = cmp->next;

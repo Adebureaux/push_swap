@@ -6,13 +6,13 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 14:47:43 by adeburea          #+#    #+#             */
-/*   Updated: 2021/06/04 16:53:42 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/06/10 23:07:05 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incs/push_swap.h"
 
-int		find_pos(t_lst *lst, int cmp)
+int	find_pos(t_lst *lst, int cmp)
 {
 	t_lst	*copy;
 	int		count;
@@ -31,22 +31,7 @@ int		find_pos(t_lst *lst, int cmp)
 	return (count);
 }
 
-int		*put_in_tab(t_lst *lst, int size)
-{
-	int		*tab;
-	int		i;
-
-	i = 0;
-	tab = (int*)malloc(sizeof(int) * size);
-	while (lst)
-	{
-		tab[i++] = lst->nbr;
-		lst = lst->next;
-	}
-	return (tab);
-}
-
-void	swaper(int *p,int *q)
+void	swaper(int *p, int *q)
 {
 	int		t;
 
@@ -72,16 +57,19 @@ void	sorter(int *a, int n)
 	}
 }
 
-void	find_median(t_stack *stack, int size)
+void	put_in_tab(t_stack *stack, t_lst *lst, int size)
 {
 	int		*tab;
-	int		median;
+	int		i;
 
-	tab = put_in_tab(stack->a, size);
+	i = 0;
+	tab = (int*)malloc(sizeof(int) * size);
+	while (lst)
+	{
+		tab[i++] = lst->nbr;
+		lst = lst->next;
+	}
 	sorter(tab, size);
-	median = (size + 1) / 2 - 1;
-	stack->median = tab[median];
-	stack->first = tab[0];
-	stack->last = tab[size];
-	free(tab);
+	stack->median = tab[(size + 1) / 2 - 1];
+	stack->sorted = tab;
 }

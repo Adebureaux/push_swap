@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 02:09:13 by adeburea          #+#    #+#             */
-/*   Updated: 2021/06/03 18:53:59 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/06/10 19:18:54 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,6 @@ int		main(int ac, char **av)
 	stack.a = lstnew(ft_atoi(av[1]));
 	parse_arg(av, &stack);
 	solver(&stack);
+	if (stack.sorted)
+		free(stack.sorted);
 }

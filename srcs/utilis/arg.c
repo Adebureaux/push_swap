@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 18:30:41 by adeburea          #+#    #+#             */
-/*   Updated: 2021/06/04 17:01:41 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/06/13 20:43:29 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	parse_arg(char **av, t_stack *stack)
 		lstadd_back(&stack->a, tmp);
 		i++;
 	}
-	if (!is_in(stack->a))
+	if (!is_in(stack))
 		quit(stack, EXIT_FAILURE);
 }
 
@@ -56,7 +56,7 @@ void	execute(char *buf, t_stack *stack, int print)
 		reverse_rotate(stack, print);
 	else if (print)
 		quit(stack, EXIT_FAILURE);
-	lstprint(*stack);
+	//lstprint(*stack);
 }
 
 void	quit(t_stack *stack, int status)
