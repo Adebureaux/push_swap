@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 03:16:09 by adeburea          #+#    #+#             */
-/*   Updated: 2021/06/13 20:43:14 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/06/14 17:16:32 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	solver_plus(t_stack *stack, int size)
 	int		i;
 	int		j;
 
-	i = -1;
-	while (i++ < size)
+	i = 0;
+	while (i++ < size / 2)
 	{
 		if (stack->a->nbr <= stack->median)
 			execute("pb", stack, 1);
@@ -41,8 +41,6 @@ void	solver_plus(t_stack *stack, int size)
 	while (j--)
 		execute("pb", stack, 1);
 	i = lstsize(stack->a) + 1;
-	if (!(size % 2))
-		i--;
 	while (!is_lst_sorted(stack->a))
 	{
 		if (stack->a->nbr == stack->sorted[i])
