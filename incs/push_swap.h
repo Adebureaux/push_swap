@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 15:16:40 by adeburea          #+#    #+#             */
-/*   Updated: 2021/06/13 19:49:51 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/06/17 12:23:15 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct	s_stack
 	int				*sorted;
 	char			direction[4];
 	int				median;
+	int				cur;
 }				t_stack;
 
 void	lstadd_back(t_lst **alst, t_lst *new);
