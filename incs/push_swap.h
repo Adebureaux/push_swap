@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 15:16:40 by adeburea          #+#    #+#             */
-/*   Updated: 2021/06/17 12:23:15 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/06/18 16:36:27 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ typedef struct	s_stack
 	char			direction[4];
 	int				median;
 	int				cur;
+	int				a_size;
+	int				b_size;
 }				t_stack;
 
 void	lstadd_back(t_lst **alst, t_lst *new);
@@ -68,6 +70,6 @@ void	put_in_tab(t_stack *stack, t_lst *lst, int size);
 int		find_pos(t_lst *lst, int cmp);
 
 void	solver(t_stack *stack);
-void	solver_plus(t_stack *stack, int size);
+void	solver_hundred(t_stack *stack, int size);
 
 #endif
