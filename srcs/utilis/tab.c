@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   median.c                                           :+:      :+:    :+:   */
+/*   tab.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 14:47:43 by adeburea          #+#    #+#             */
-/*   Updated: 2021/06/17 12:24:01 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/06/19 12:18:10 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,15 @@ int	find_pos(t_lst *lst, int cmp)
 {
 	t_lst	*copy;
 	int		count;
-	int		size;
 
 	count = 0;
-	size = lstsize(lst);
 	copy = lst;
-	while (copy && copy->nbr < cmp)
+	while (copy && copy->nbr != cmp)
 	{
 		copy = copy->next;
 		count++;
 	}
-	if (count == size)
+	if (!copy)
 		return (-1);
 	return (count);
 }

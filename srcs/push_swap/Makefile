@@ -6,7 +6,7 @@
 #    By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/21 02:09:23 by adeburea          #+#    #+#              #
-#    Updated: 2021/06/18 17:12:26 by adeburea         ###   ########.fr        #
+#    Updated: 2021/06/19 12:10:55 by adeburea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 .PHONY: all clean fclean re
@@ -37,10 +37,10 @@ SRCS 	=	lstadd_back.c \
 			reverse_rotate.c \
 			arg.c \
 			is.c \
-			median.c \
+			tab.c \
 			solver.c \
 			solver_hundred.c \
-			solver_thouand.c \
+			solver_thousand.c \
 			push_swap.c
 
 $(NAME): $(LIBFT) $(OBJ) $(OBJS)

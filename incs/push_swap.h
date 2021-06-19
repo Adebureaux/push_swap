@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 15:16:40 by adeburea          #+#    #+#             */
-/*   Updated: 2021/06/18 16:36:27 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/06/19 12:10:22 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,9 @@ typedef struct	s_stack
 	t_lst			*b;
 	int				*sorted;
 	char			direction[4];
+	int				first;
 	int				median;
+	int				third;
 	int				cur;
 	int				a_size;
 	int				b_size;
@@ -71,5 +73,6 @@ int		find_pos(t_lst *lst, int cmp);
 
 void	solver(t_stack *stack);
 void	solver_hundred(t_stack *stack, int size);
+void	solver_thousand(t_stack *stack, int size);
 
 #endif

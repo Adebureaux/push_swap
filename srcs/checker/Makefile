@@ -6,7 +6,7 @@
 #    By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/14 14:21:20 by adeburea          #+#    #+#              #
-#    Updated: 2021/06/04 14:47:32 by adeburea         ###   ########.fr        #
+#    Updated: 2021/06/19 12:11:10 by adeburea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 .PHONY: all clean fclean re
@@ -37,7 +37,7 @@ SRCS 	=	lstadd_back.c \
 			reverse_rotate.c \
 			arg.c \
 			is.c \
-			median.c \
+			tab.c \
 			checker.c
 
 $(NAME): $(LIBFT) $(OBJ) $(OBJS)
