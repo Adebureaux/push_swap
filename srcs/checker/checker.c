@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 15:36:48 by adeburea          #+#    #+#             */
-/*   Updated: 2021/06/24 17:31:11 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/06/24 18:42:09 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ int	main(int ac, char **av)
 	parse_arg(av, &stack);
 	read_stdin(&stack);
 	is_stack_sorted(&stack, 1);
-	if (stack.sorted)
-		free(stack.sorted);
+	free(stack.sorted);
+	lstfree(&stack);
+	return (0);
 }
