@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 03:16:09 by adeburea          #+#    #+#             */
-/*   Updated: 2021/06/19 11:58:05 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/06/24 12:18:46 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,5 @@ void	solver(t_stack *stack)
 	else if (size <= 5)
 		solve_five(stack, size);
 	else
-		solver_hundred(stack, size);
+		solver_plus(stack, size);
 }

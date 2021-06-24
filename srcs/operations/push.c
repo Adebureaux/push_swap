@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 13:33:09 by adeburea          #+#    #+#             */
-/*   Updated: 2021/06/03 18:51:49 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/06/24 12:33:35 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ void	push_a(t_stack *stack, int print)
 		if (print)
 			ft_putstr_fd("pa\n", 1);
 	}
+	stack->a_size++;
+	stack->b_size--;
 }
 
 void	push_b(t_stack *stack, int print)
@@ -46,4 +48,6 @@ void	push_b(t_stack *stack, int print)
 		if (print)
 			ft_putstr_fd("pb\n", 1);
 	}
+	stack->a_size--;
+	stack->b_size++;
 }

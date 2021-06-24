@@ -6,13 +6,14 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 15:16:40 by adeburea          #+#    #+#             */
-/*   Updated: 2021/06/19 12:10:22 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/06/24 12:33:37 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # define EXIT 99
+# define CHUNK_SIZE 12
 # include "../libft/libft.h"
 # include <stdio.h>
 # include <stdlib.h>
@@ -22,6 +23,7 @@ typedef struct	s_lst
 {
 	int				nbr;
 	struct s_lst	*next;
+	struct s_lst	*prev;
 }				t_lst;
 
 typedef struct	s_stack
@@ -30,12 +32,9 @@ typedef struct	s_stack
 	t_lst			*b;
 	int				*sorted;
 	char			direction[4];
-	int				first;
-	int				median;
-	int				third;
-	int				cur;
 	int				a_size;
 	int				b_size;
+	int				size;
 }				t_stack;
 
 void	lstadd_back(t_lst **alst, t_lst *new);
@@ -70,9 +69,9 @@ void	parse_arg(char **av, t_stack *stack);
 
 void	put_in_tab(t_stack *stack, t_lst *lst, int size);
 int		find_pos(t_lst *lst, int cmp);
+void	choose_direction(t_stack *stack, t_lst *lst, int cmp);
 
 void	solver(t_stack *stack);
-void	solver_hundred(t_stack *stack, int size);
-void	solver_thousand(t_stack *stack, int size);
+void	solver_plus(t_stack *stack, int size);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 14:47:43 by adeburea          #+#    #+#             */
-/*   Updated: 2021/06/19 12:18:10 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/06/24 12:20:50 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,27 @@ int	find_pos(t_lst *lst, int cmp)
 	if (!copy)
 		return (-1);
 	return (count);
+}
+
+void	choose_direction(t_stack *stack, t_lst *lst, int cmp)
+{
+	int		pos;
+
+	pos = find_pos(lst, cmp);
+	if (lst == stack->a)
+	{
+		if (pos > stack->a_size / 2)
+			ft_strcpy(stack->direction, "rra");
+		else
+			ft_strcpy(stack->direction, "ra");
+	}
+	else
+	{
+		if (pos > stack->b_size / 2)
+			ft_strcpy(stack->direction, "rrb");
+		else
+			ft_strcpy(stack->direction, "rb");
+	}
 }
 
 void	swaper(int *p, int *q)
@@ -68,6 +89,6 @@ void	put_in_tab(t_stack *stack, t_lst *lst, int size)
 		lst = lst->next;
 	}
 	sorter(tab, size);
-	stack->median = tab[(size + 1) / 2 - 1];
+	stack->size = size;
 	stack->sorted = tab;
 }
