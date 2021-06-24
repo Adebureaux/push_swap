@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 00:14:28 by adeburea          #+#    #+#             */
-/*   Updated: 2020/11/21 18:38:21 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/06/24 14:20:53 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	ft_set_isin(const char *str, char c)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
@@ -25,7 +25,7 @@ static int	ft_set_isin(const char *str, char c)
 	return (0);
 }
 
-char		*ft_strtrim(const char *s1, const char *set)
+char	*ft_strtrim(const char *s1, const char *set)
 {
 	char	*dst;
 	size_t	start;

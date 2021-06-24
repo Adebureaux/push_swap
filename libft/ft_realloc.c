@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 15:39:15 by adeburea          #+#    #+#             */
-/*   Updated: 2021/02/02 15:44:38 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/06/24 14:10:22 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ void	*ft_realloc(void *ptr, size_t ex, size_t size)
 	void	*tmp;
 
 	if (!ptr)
-		return ((void*)malloc(size));
-	tmp = (void*)malloc(size);
+		return ((void *)malloc(size));
+	tmp = (void *)malloc(size);
 	if (!tmp)
 		return (NULL);
 	ft_memmove(tmp, ptr, ex);
 	free(ptr);
-	ptr = ((void*)malloc(size));
+	ptr = ((void *)malloc(size));
 	if (!ptr)
 		return (NULL);
 	ft_memmove(ptr, tmp, size);

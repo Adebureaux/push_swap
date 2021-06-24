@@ -6,27 +6,26 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 15:16:40 by adeburea          #+#    #+#             */
-/*   Updated: 2021/06/24 12:33:37 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/06/24 18:16:06 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # define EXIT 99
-# define CHUNK_SIZE 12
 # include "../libft/libft.h"
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 
-typedef struct	s_lst
+typedef struct s_lst
 {
 	int				nbr;
 	struct s_lst	*next;
 	struct s_lst	*prev;
 }				t_lst;
 
-typedef struct	s_stack
+typedef struct s_stack
 {
 	t_lst			*a;
 	t_lst			*b;
@@ -34,6 +33,7 @@ typedef struct	s_stack
 	char			direction[4];
 	int				a_size;
 	int				b_size;
+	int				chunk_size;
 	int				size;
 }				t_stack;
 

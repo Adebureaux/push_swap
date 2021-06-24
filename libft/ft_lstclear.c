@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 16:57:39 by adeburea          #+#    #+#             */
-/*   Updated: 2020/11/17 16:16:59 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/06/24 13:01:54 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	tmp = (*lst);
 	if (lst)

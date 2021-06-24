@@ -6,13 +6,13 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 18:29:25 by adeburea          #+#    #+#             */
-/*   Updated: 2021/06/13 19:49:39 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/06/24 18:20:52 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incs/push_swap.h"
 
-int		is_in(t_stack *stack)
+int	is_in(t_stack *stack)
 {
 	int		size;
 	int		i;
@@ -33,7 +33,7 @@ int		is_in(t_stack *stack)
 	return (1);
 }
 
-int		is_nbr(char *s)
+int	is_nbr(char *s)
 {
 	int		i;
 	int		flag;
@@ -62,7 +62,7 @@ int		is_nbr(char *s)
 	return (1);
 }
 
-int		is_stack_sorted(t_stack *stack, int exit)
+int	is_stack_sorted(t_stack *stack, int exit)
 {
 	t_lst	*cur;
 	t_lst	*cmp;
@@ -91,7 +91,7 @@ int		is_stack_sorted(t_stack *stack, int exit)
 	return (1);
 }
 
-int		is_lst_sorted(t_lst *lst)
+int	is_lst_sorted(t_lst *lst)
 {
 	t_lst	*cur;
 	t_lst	*cmp;
@@ -108,7 +108,7 @@ int		is_lst_sorted(t_lst *lst)
 	return (1);
 }
 
-int		is_lst_reverse_sorted(t_lst *lst)
+int	is_lst_reverse_sorted(t_lst *lst)
 {
 	t_lst	*cur;
 	t_lst	*cmp;

@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 00:13:00 by adeburea          #+#    #+#             */
-/*   Updated: 2020/11/21 18:38:45 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/06/24 14:14:27 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static char	**ft_free_split(char **dst, int *char_nbr)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (char_nbr)
@@ -52,7 +52,8 @@ static int	*ft_split_chars(const char *str, char c, int str_nbr)
 	int		i;
 
 	i = 0;
-	if (!(char_nbr = (int*)malloc(sizeof(int) * str_nbr)))
+	char_nbr = (int *)malloc(sizeof(int) * str_nbr);
+	if (!char_nbr)
 		return (NULL);
 	while (str_nbr--)
 	{
@@ -77,7 +78,8 @@ static char	**ft_spliter(const char *str, char c, int *char_nbr, int str_nbr)
 
 	i = -1;
 	j = 0;
-	if (!(dst = (char**)ft_calloc(1, sizeof(char*) * (str_nbr + 1))))
+	dst = (char **)ft_calloc(1, sizeof(char *) * (str_nbr + 1));
+	if (!dst)
 		return (NULL);
 	while (++i < str_nbr)
 	{
@@ -85,7 +87,8 @@ static char	**ft_spliter(const char *str, char c, int *char_nbr, int str_nbr)
 			j++;
 		while (str[j] && str[j] != c)
 		{
-			if (!(dst[i] = ft_substr(str, j, char_nbr[i])))
+			dst[i] = ft_substr(str, j, char_nbr[i]);
+			if (!dst[i])
 				return (ft_free_split(dst, char_nbr));
 			j += char_nbr[i];
 		}
@@ -94,7 +97,7 @@ static char	**ft_spliter(const char *str, char c, int *char_nbr, int str_nbr)
 	return (dst);
 }
 
-char		**ft_split(const char *s, char c)
+char	**ft_split(const char *s, char c)
 {
 	char	**dst;
 	int		*char_nbr;
@@ -103,9 +106,11 @@ char		**ft_split(const char *s, char c)
 	if (!s)
 		return (NULL);
 	str_nbr = ft_split_strs(s, c);
-	if (!(char_nbr = ft_split_chars(s, c, str_nbr)))
+	char_nbr = ft_split_chars(s, c, str_nbr);
+	if (!char_nbr)
 		return (NULL);
-	if (!(dst = ft_spliter(s, c, char_nbr, str_nbr)))
+	dst = ft_spliter(s, c, char_nbr, str_nbr);
+	if (!dst)
 		return (NULL);
 	free(char_nbr);
 	return (dst);

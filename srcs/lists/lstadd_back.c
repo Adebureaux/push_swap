@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 15:39:55 by adeburea          #+#    #+#             */
-/*   Updated: 2021/06/23 16:05:18 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/06/24 17:09:00 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 void	lstadd_back(t_lst **alst, t_lst *new)
 {
-	t_lst *last = *alst;
+	t_lst	*last;
 
+	last = *alst;
 	new->next = NULL;
 	if (!*alst)
 	{

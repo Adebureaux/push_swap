@@ -6,13 +6,13 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 15:36:48 by adeburea          #+#    #+#             */
-/*   Updated: 2021/06/10 19:19:57 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/06/24 17:31:11 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incs/push_swap.h"
 
-int		read_stdin(t_stack *stack)
+int	read_stdin(t_stack *stack)
 {
 	int		i;
 	int		rd;
@@ -21,7 +21,7 @@ int		read_stdin(t_stack *stack)
 	i = 0;
 	rd = 1;
 	ft_bzero(buf, 100);
-	while (rd == 1)
+	while (rd == 1 && i < 100)
 	{
 		rd = read(0, &buf[i], 1);
 		if (buf[i] == '\n')
@@ -36,7 +36,7 @@ int		read_stdin(t_stack *stack)
 	return (1);
 }
 
-int		main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	t_stack	stack;
 

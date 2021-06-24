@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 18:30:41 by adeburea          #+#    #+#             */
-/*   Updated: 2021/06/24 12:06:13 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/06/24 18:21:16 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ void	execute(char *buf, t_stack *stack, int print)
 		reverse_rotate(stack, print);
 	else if (print)
 		quit(stack, EXIT_FAILURE);
-	//lstprint(*stack);
 }
 
 void	quit(t_stack *stack, int status)

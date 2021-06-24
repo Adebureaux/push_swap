@@ -6,49 +6,11 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 14:47:43 by adeburea          #+#    #+#             */
-/*   Updated: 2021/06/24 12:20:50 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/06/24 18:21:05 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incs/push_swap.h"
-
-int	find_pos(t_lst *lst, int cmp)
-{
-	t_lst	*copy;
-	int		count;
-
-	count = 0;
-	copy = lst;
-	while (copy && copy->nbr != cmp)
-	{
-		copy = copy->next;
-		count++;
-	}
-	if (!copy)
-		return (-1);
-	return (count);
-}
-
-void	choose_direction(t_stack *stack, t_lst *lst, int cmp)
-{
-	int		pos;
-
-	pos = find_pos(lst, cmp);
-	if (lst == stack->a)
-	{
-		if (pos > stack->a_size / 2)
-			ft_strcpy(stack->direction, "rra");
-		else
-			ft_strcpy(stack->direction, "ra");
-	}
-	else
-	{
-		if (pos > stack->b_size / 2)
-			ft_strcpy(stack->direction, "rrb");
-		else
-			ft_strcpy(stack->direction, "rb");
-	}
-}
 
 void	swaper(int *p, int *q)
 {
@@ -82,13 +44,21 @@ void	put_in_tab(t_stack *stack, t_lst *lst, int size)
 	int		i;
 
 	i = 0;
-	tab = (int*)malloc(sizeof(int) * size);
+	tab = (int *)malloc(sizeof(int) * size);
 	while (lst)
 	{
 		tab[i++] = lst->nbr;
 		lst = lst->next;
 	}
 	sorter(tab, size);
-	stack->size = size;
 	stack->sorted = tab;
+	stack->size = size;
+	stack->a_size = size;
+	stack->b_size = 0;
+	if (size < 25)
+		stack->chunk_size = 1;
+	else
+		stack->chunk_size = 18;
+	if (size > 100)
+		stack->chunk_size += size / 26;
 }

@@ -6,15 +6,15 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 14:58:46 by adeburea          #+#    #+#             */
-/*   Updated: 2020/11/13 02:17:40 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/06/24 13:10:01 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	while (lst)

@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 14:31:18 by adeburea          #+#    #+#             */
-/*   Updated: 2020/11/13 02:17:15 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/06/24 14:15:08 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_front(t_list **alst, t_list *new)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	tmp = (*alst);
 	(*alst) = new;

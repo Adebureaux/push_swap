@@ -6,11 +6,13 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 00:11:40 by adeburea          #+#    #+#             */
-/*   Updated: 2020/09/28 20:44:26 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/06/24 12:55:50 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-	return ((c >= '0' && c <= '9') ? 1 : 0);
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
 }

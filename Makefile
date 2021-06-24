@@ -6,7 +6,7 @@
 #    By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/21 02:09:23 by adeburea          #+#    #+#              #
-#    Updated: 2021/04/26 00:11:54 by adeburea         ###   ########.fr        #
+#    Updated: 2021/06/24 18:06:32 by adeburea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 .PHONY: all clean fclean re
@@ -26,9 +26,11 @@ $(NAME):
 all: $(NAME)
 
 clean:
+	make clean -C $(LIB)
 	rm -rf $(OBJ)
 
 fclean: clean
+	make fclean -C $(LIB)
 	rm -f $(NAME)
 	rm -f $(CHECK)
 

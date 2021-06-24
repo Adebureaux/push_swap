@@ -6,11 +6,13 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 00:11:57 by adeburea          #+#    #+#             */
-/*   Updated: 2020/09/28 20:44:24 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/06/24 13:08:43 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isprint(int c)
+int	ft_isprint(int c)
 {
-	return ((c >= 32 && c <= 126) ? 1 : 0);
+	if (c >= 32 && c <= 126)
+		return (1);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 14:26:01 by adeburea          #+#    #+#             */
-/*   Updated: 2020/11/17 16:36:13 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/06/24 12:57:32 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list *lst;
+	t_list	*lst;
 
-	if (!(lst = malloc(sizeof(t_list))))
+	lst = malloc(sizeof(t_list));
+	if (!lst)
 		return (NULL);
 	lst->content = content;
 	lst->next = NULL;

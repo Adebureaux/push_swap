@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 00:13:15 by adeburea          #+#    #+#             */
-/*   Updated: 2020/09/28 20:43:58 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/06/24 13:02:55 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,16 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[i])
 	{
 		if ((unsigned char)s[i] == (unsigned char)c)
-			return ((char*)&s[i]);
+			return ((char *)&s[i]);
 		i++;
 	}
-	return ((c == '\0') ? (char*)&s[i] : NULL);
+	if (c == '\0')
+		return ((char *)&s[i]);
+	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 00:12:08 by adeburea          #+#    #+#             */
-/*   Updated: 2020/09/29 16:45:50 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/06/24 13:07:20 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	unsigned char		*ptr_dst;
 	const unsigned char	*ptr_src;
 
-	ptr_dst = (unsigned char*)dst;
-	ptr_src = (unsigned char*)src;
+	ptr_dst = (unsigned char *)dst;
+	ptr_src = (unsigned char *)src;
 	while (n--)
 	{
 		*ptr_dst = *ptr_src++;

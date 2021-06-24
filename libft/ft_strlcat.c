@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 00:13:40 by adeburea          #+#    #+#             */
-/*   Updated: 2020/09/28 20:43:51 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/06/24 14:21:23 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t dst_len;
-	size_t i;
-	size_t j;
+	size_t	dst_len;
+	size_t	i;
+	size_t	j;
 
 	dst_len = ft_strlen(dst);
 	i = dst_len;

@@ -6,15 +6,15 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 00:14:06 by adeburea          #+#    #+#             */
-/*   Updated: 2020/11/14 13:36:19 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/06/24 14:19:48 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (n < 1)

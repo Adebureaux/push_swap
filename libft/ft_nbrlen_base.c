@@ -6,11 +6,11 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 14:51:19 by adeburea          #+#    #+#             */
-/*   Updated: 2021/01/29 14:57:36 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/06/24 12:58:12 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_nbrlen_base(int n, int base)
+int	ft_nbrlen_base(int n, int base)
 {
 	int	j;
 
