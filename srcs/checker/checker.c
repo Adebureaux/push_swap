@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 15:36:48 by adeburea          #+#    #+#             */
-/*   Updated: 2021/06/24 18:42:09 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/06/24 22:27:50 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int	main(int ac, char **av)
 
 	stack.a = NULL;
 	stack.b = NULL;
+	stack.sorted = NULL;
 	if (ac < 2)
 		return (0);
 	if (!is_nbr(av[1]))
