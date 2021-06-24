@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 18:30:41 by adeburea          #+#    #+#             */
-/*   Updated: 2021/06/24 18:41:17 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/06/24 19:15:53 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ void	quit(t_stack *stack, int status)
 		ft_putstr_fd("OK\n", 1);
 	else if (status == -1)
 		ft_putstr_fd("KO\n", 1);
+	if (stack->sorted)
+		free(stack->sorted);
 	if (stack)
 		lstfree(stack);
 	exit(status);
